@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div ng-app="myApp">
+            <div ng-controller="myCtrl as main">
+                <p>
+                    <h3 ng-class="main.classMeteo"></h3>
+                    <i class="badge">{{ main.nombre }}</i> degre
+                    <plus ng-if="main.nombre > 1">s</plus>
+                </p>
+                <div ng-class="main.classTemp" class="form-group">
+                    <label for="nombre" class="control-label">Changer la temperature</label>
+                    <input id="nombre" required ng-model="main.nombre" type="number" class="form-control" placeholder="Degres en °" />
+                </div>
+
+                <form>
+
+                </form>
+
+
+                <button ng-click="main.increase()" class="btn btn-primary">
+              <i class="fa fa-plus"></i> Augmenter
+            </button>
+                <button ng-click="main.decrease()" class="btn btn-primary">
+              <i class="fa fa-minus"></i> Diminuer
+            </button>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+
+    <script src="./app/scripts/controllers/main.js"></script>
+
+
+</body>
+
+</html>
